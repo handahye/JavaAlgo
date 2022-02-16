@@ -49,5 +49,6 @@ public class BOJ_10711 {
             count++;
         }
         System.out.println(count - 1);
+        scan.close();
     }
 }

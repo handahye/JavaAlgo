@@ -1,10 +1,8 @@
 import java.util.*;
 
-public class Main {
-
-    public static void main(String[] args) {
-        int[] lottos = { 44, 1, 0, 0, 31, 25 };
-        int[] win_nums = { 31, 10, 45, 1, 6, 19 };
+class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+        int[] answer = new int[2];
         Integer lotto[] = Arrays.stream(lottos).boxed().toArray(Integer[]::new);
         Arrays.sort(lotto, Collections.reverseOrder());
         int[] tmp = { 6, 6, 5, 4, 3, 2, 1 };
@@ -24,7 +22,8 @@ public class Main {
                 high++;
             }
         }
-
-        System.out.println(cnt);
+        answer[0] = tmp[high];
+        answer[1] = tmp[low];
+        return answer;
     }
 }
